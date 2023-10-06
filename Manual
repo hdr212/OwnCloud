@@ -1,0 +1,60 @@
+Requisitos previos
+
+    Un VPS Ubuntu 22.04
+    Acceso SSH con privilegios de root o un usuario normal del sistema con privilegios sudo
+
+Paso 1: inicie sesión mediante SSH y actualice el sistema
+
+Inicie sesión en su servidor Ubuntu 22.04 con SSH como usuario root:
+
+ssh raíz@dirección_IP -p número_puerto
+
+Deberá reemplazar 'Dirección_IP' y 'Número_puerto' con la dirección IP respectiva de su servidor y el número de puerto SSH.
+
+Una vez que haya iniciado sesión, ejecute el siguiente comando para actualizar todos los paquetes instalados a la última versión disponible:
+
+actualización adecuada && actualización adecuada
+
+Paso 2: instale el servidor web Nginx
+
+En este tutorial, instalaremos y usaremos el servidor web Nginx. Puedes instalarlo usando el siguiente comando:
+
+apto para instalar nginx
+
+Una vez que el servidor web Nginx esté instalado, inicie y habilite el servicio Nginx usando el siguiente comando:
+
+systemctl iniciar nginx
+systemctl habilitar nginx
+
+Puede comprobar el estado del servicio Nginx:
+
+estado del sistema nginx
+
+Paso 3: instale PHP y las extensiones PHP requeridas
+
+De forma predeterminada, Ubuntu 22.04 se envía con PHP 8.1 y, en el momento de escribir este artículo, la última versión de ownCloud no es compatible con PHP 8.x.
+
+Esto significa que necesita instalar PHP 7.4 y las extensiones PHP requeridas en el servidor.
+
+Para instalar PHP 7.4 en Ubuntu 22.04, debe instalar SURY, un repositorio de terceros que proporciona paquetes PHP.
+
+agregar-repositorio-apt ppa:ondrej/php --yes &> /dev/null
+
+Actualice el repositorio con el siguiente comando:
+
+actualización adecuada
+
+Puedes instalarlos todos con el siguiente comando:
+
+apto para instalar php7.4 php7.4-xml php7.4-cli php7.4-cgi php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-gd php7.4-curl php7.4-zip php7.4-imagick php7.4-json php7.4-intl
+
+Una vez que todos los paquetes estén instalados, verifique la versión de PHP usando el siguiente comando:
+
+php7.4-v
+
+Deberías ver el siguiente resultado:
+
+PHP 7.4.29 (cli) (compilado: 28 de abril de 2022 11:47:05) (NTS)
+Copyright (c) El Grupo PHP
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+con Zend OPcache v7.4.29, Copyright (c), por Zend Technologies
