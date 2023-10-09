@@ -49,34 +49,64 @@ GRANT ALL ON bbdd.* to 'usuario'@'localhost';
 
 exit
 
-https://owncloud.com/download-server/ 
+https://owncloud.com/download-server/
+ 
 Mover el zip a la carpeta
+
 mv /vagrant/owncloud-complete-20230906\(1\).zip /var/www/html/
+
 cd /var/www/html/
+
 ls
+
 unzip owncloud-complete-20230906\(1\).zip
+
 ls
+
 cd owncloud
+
 cp -R * ..
+
 ls
+
 cd ..
+
 ll
+
 ls
+
 rm -r owncloud
+
 rm -r owncloud-complete-20230906\(1\).zip
+
 rm -r index.html
+
 cd /var/www/html
+
 chmod -R 775 .
+
 chown -R root:www-data .
+
 exit
+
 logout
+
 vi Vagrantfile
+
  config.vm.network "forwarded_port", guest: 80, host: 8080
+
 config.vm.network "public_network"
+
 vagrant reload
+
 vagrant ssh
+
 logout
+
 vagrant reload
+
 vagrant ssh
+
 INICIAR SESION
+
 
